@@ -1,10 +1,14 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useAppStore } from "./store/store";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const count = useAppStore(store => store.count);
+  const addCount = useAppStore(store => store.addCount);
+  const store = useAppStore();
+
+  // console.log(store.liveblocks.enterRoom);
 
   return (
     <div className="App">
@@ -18,7 +22,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => addCount(1)}>
           count is {count}
         </button>
         <p>

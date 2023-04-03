@@ -7,6 +7,7 @@ specifiers:
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-react': ^3.1.0
+  immer: ^9.0.21
   react: ^18.2.0
   react-dom: ^18.2.0
   typescript: ^4.9.3
@@ -17,9 +18,10 @@ dependencies:
   '@liveblocks/client': 1.0.1
   '@liveblocks/react': 1.0.1_react@18.2.0
   '@liveblocks/zustand': 1.0.1_zustand@4.3.7
+  immer: 9.0.21
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  zustand: 4.3.7_react@18.2.0
+  zustand: 4.3.7_immer@9.0.21+react@18.2.0
 
 devDependencies:
   '@types/react': 18.0.32
@@ -522,7 +524,7 @@ packages:
     dependencies:
       '@liveblocks/client': 1.0.1
       '@liveblocks/core': 1.0.1
-      zustand: 4.3.7_react@18.2.0
+      zustand: 4.3.7_immer@9.0.21+react@18.2.0
     dev: false
 
   /@types/prop-types/15.7.5:
@@ -701,6 +703,10 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /immer/9.0.21:
+    resolution: {integrity: sha512-bc4NBHqOqSfRW7POMkHd51LvClaeMXpm8dx0e8oE2GORbq5aRK7Bxl4FyzVLdGtLmvLKL7BTDBG5ACQm4HWjTA==}
+    dev: false
 
   /is-core-module/2.11.0:
     resolution: {integrity: sha512-RRjxlvLDkD1YJwDbroBHMb+cukurkDWNyHx7D3oNB5x9rb5ogcksMC5wHCadcXoo67gVr/+3GFySh3134zi6rw==}
@@ -908,7 +914,7 @@ packages:
     resolution: {integrity: sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g==}
     dev: true
 
-  /zustand/4.3.7_react@18.2.0:
+  /zustand/4.3.7_immer@9.0.21+react@18.2.0:
     resolution: {integrity: sha512-dY8ERwB9Nd21ellgkBZFhudER8KVlelZm8388B5nDAXhO/+FZDhYMuRnqDgu5SYyRgz/iaf8RKnbUs/cHfOGlQ==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -920,6 +926,7 @@ packages:
       react:
         optional: true
     dependencies:
+      immer: 9.0.21
       react: 18.2.0
       use-sync-external-store: 1.2.0_react@18.2.0
     dev: false
