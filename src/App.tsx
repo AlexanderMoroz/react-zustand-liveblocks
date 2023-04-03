@@ -1,14 +1,16 @@
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { useAppStore } from "./store/store";
+import { subscribe, useAppStore } from "./store/store";
+
+subscribe(store => store.count, console.log)
 
 function App() {
-  const count = useAppStore(store => store.count);
-  const addCount = useAppStore(store => store.addCount);
-  const store = useAppStore();
+  const count = useAppStore.useCount();
+  const addCount = useAppStore.useAddCount();
+  const liveblocks = useAppStore.useLiveblocks();
 
-  // console.log(store.liveblocks.enterRoom);
+  console.log(liveblocks.enterRoom);
 
   return (
     <div className="App">
